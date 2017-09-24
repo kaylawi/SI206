@@ -21,27 +21,27 @@ def getData(file):
     DataB = file.read()
     print(DataB)
 
-##file = open("TheVictors.txt", "r")
-##song = file.read()
-##print(song)
+file = open("TheVictors.txt", "r")
+song = file.read()
+print(song)
 
-##songlists = song.split()
-##print(songlists)
+songlists = song.split()
+print(songlists)
 
-##counts = dict()
+counts = dict()
 
-##for word in songlists:
-##  counts[word] = counts.get(word, 0) + 1
-##      print(counts)
+for word in songlists:
+counts[word] = counts.get(word, 0) + 1
+ print(counts)
 
-##list1 = list()
-##for key, val in counts.items():
-##  x = (val,key)
-##      list1.append(x)
+list1 = list()
+for key, val in counts.items():
+  x = (val,key)
+    list1.append(x)
 
-##list1 = sorted(list1,reverse = True)
-##for val, key in list1[:15]:
-##  print(key,val)
+list1 = sorted(list1,reverse = True)
+for val, key in list1[:15]:
+ print(key,val)
 
 
 #Sort based on key/column
@@ -152,4 +152,3 @@ def main():
 # Standard boilerplate to call the main() function that tests all your code.
 if __name__ == '__main__':
     main()
-
