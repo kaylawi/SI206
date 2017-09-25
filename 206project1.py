@@ -1,7 +1,34 @@
 import os
 import filecmp
-
+import csv
 def getData(file):
+    somelist = []
+    with open(file, "r") as somefile:
+        
+        somelist = []
+        
+        somedictionary = csv.DictReader(somefile)
+    
+        for lst in somedictionary:
+            
+            
+            tempdictionary = {}
+            
+            tempdictionary["First"] = lst["First"]
+            tempdictionary["Last"] = lst["Last"]
+            tempdictionary["Email"] = lst["Email"]
+            tempdictionary["Class"] = lst["Class"]
+            tempdictionary["DOB"] = lst["DOB"]
+
+            somelist.append(lst)
+
+    return somelist
+
+
+#Which dictionary type do you want?
+    
+    #TASK ONE
+    
 #Input: file name
 #Ouput: return a list of dictionary objects where 
 #the keys will come from the first row in the data.
@@ -11,46 +38,39 @@ def getData(file):
 #change (contents and size) in the different test 
 #cases.
 
-	file = open("P1DataA.csv","r")
-    DataA = file.read()
-    print(DataA)
-        
-       
-       
-    file = open("P1DataB.csv")
-    DataB = file.read()
-    print(DataB)
+#P1DataA
 
-file = open("TheVictors.txt", "r")
-song = file.read()
-print(song)
 
-songlists = song.split()
-print(songlists)
+    
 
-counts = dict()
+    
+#P1DataB
 
-for word in songlists:
-counts[word] = counts.get(word, 0) + 1
- print(counts)
 
-list1 = list()
-for key, val in counts.items():
-  x = (val,key)
-    list1.append(x)
+    
 
-list1 = sorted(list1,reverse = True)
-for val, key in list1[:15]:
- print(key,val)
-
+# TASK TWO
 
 #Sort based on key/column
 def mySort(data,col):
 #Input: list of dictionaries
 #Output: Return a string of the form firstName lastName
+    for item in data:
+        print(item["First"])
 
-	#Your code here:
-	pass
+
+
+    stringA = "firstName"
+    stringB = "lastName"
+    
+    
+
+
+    return stringA,stringB
+
+
+
+# TASK THREE
 
 #Create a histogram
 def classSizes(data):
@@ -64,6 +84,8 @@ def classSizes(data):
 
 
 
+#TASK FOUR
+
 # Find the most common day of the year to be born
 def findDay(a):
 # Input: list of dictionaries
@@ -73,6 +95,7 @@ def findDay(a):
 	#Your code here:
 	pass
 
+#TASK FIVE
 
 # Find the average age (rounded) of the Students
 def findAge(a):
@@ -82,6 +105,8 @@ def findAge(a):
 
 	#Your code here:
 	pass
+
+#TASK SIX
 
 #Similar to mySort, but instead of returning single
 #Student, all of the sorted data is saved to a csv file.
